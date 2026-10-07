@@ -1,0 +1,3 @@
+import type{DecisionDraft,DecisionOption}from'./models';
+const option=(id:string,name:string,description:string,impacts:DecisionOption['impacts'],reversibility:number):DecisionOption=>({id,name,description,impacts,reversibility});
+export function createSampleDraft():DecisionDraft{return{id:'case-career',title:'要不要离开现在的工作？',background:'现岗位稳定但成长变慢，新机会更有挑战，也意味着短期不确定。',weights:{stability:30,growth:35,freedom:20,money:15},updatedAt:new Date().toISOString(),options:[option('stay','留下来','维持熟悉的团队与节奏',{stability:4,growth:-1,freedom:0,money:2},75),option('leave','接受新机会','进入更具挑战的新环境',{stability:-2,growth:5,freedom:2,money:3},55),option('prepare','再准备半年','设定期限补足能力后再行动',{stability:2,growth:3,freedom:1,money:1},85)]}}

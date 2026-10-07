@@ -1,0 +1,5 @@
+services:
+  regret-simulator:
+    build: .
+    ports:
+      - "8106:80"
